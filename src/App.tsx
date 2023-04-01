@@ -1,25 +1,26 @@
-import React from 'react';
+/* eslint-disable prettier/prettier */
+//
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TopBanner from './banner';
+import { BrowserRouter as Router, Routes, Route }
+    from "react-router-dom";
+import Movie from "./Movie";
+import Podcast from "./Podcast";
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //This is my routing to take us to each of the pages. 
+    <Router>
+      <Routes>
+        <Route path="/first" element={<Movie />}/>
+        <Route path="/second" element={<Podcast />}/>
+        <Route path="/" element={<TopBanner />}/>
+      </Routes>
+    </Router>
   );
 }
 
